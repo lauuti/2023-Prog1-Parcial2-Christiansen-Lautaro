@@ -20,6 +20,8 @@ namespace _2do_Parcial
             else
                 return new List<Mesa>();
         }
+
+        //CORRECCION: MAL IDENTADO, RESTA PUNTOS
       public static void GuardarArchivo(Mesa mesa)
       {
         List<Mesa> lista = LeerArchivo();
@@ -32,6 +34,7 @@ namespace _2do_Parcial
         string json = JsonConvert.SerializeObject(lista,(Newtonsoft.Json.Formatting)System.Xml.Formatting.Indented);
         File.WriteAllText(ruta, json);
       }
+      //CORRECCION: SE PUEDE RESOLVER EN UN ÚNICO MÉTODO
         public static void Guardar(List<Mesa> mesa)
         {
             string json = JsonConvert.SerializeObject(mesa);

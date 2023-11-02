@@ -1,6 +1,6 @@
 ﻿document.addEventListener("DOMContentLoaded", function (event) {
     console.info("Pruebas")
-});
+}); //CORRECCIÓN: BORRAR CODIGO COPIADO SI NO SE USA
 document.getElementById('Formulario').addEventListener('submit', function (event) {
     event.preventDefault(); 
 

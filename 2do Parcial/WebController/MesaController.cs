@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service;
 
+//CORRECCION: EL CONTROLE DEBE IR EN LA CARPETA CONTROLLER.
 namespace WebController
 {
     [Route("[controller]")]
@@ -18,6 +19,7 @@ namespace WebController
             {
                 return BadRequest("No se envio la id correctamente");
             }
+            //CORRECCION: EL ERROR DEL SERVICE SE ARRASTRA ACÁ.
             int res = logica.BajaMesa(id);
             if (res == 404)
             {
@@ -42,9 +44,11 @@ namespace WebController
             bool res = logica.AltaMesa(mesa);
             if (res == false)
             {
+                //CORRECCION: NO SE DEBEN DEVOLVER TEXTOS SIN ESTAR DENTRO DE UNA CLASE
                 return BadRequest("No se enviaron correctame las credenciales");
 
             }
+            //CORRECCION: NO SE DEBEN DEVOLVER TEXTOS SIN ESTAR DENTRO DE UNA CLASE
             return Ok("La mesa se cargo correctamente");
         }
         [HttpPut("{id}")]
@@ -53,10 +57,12 @@ namespace WebController
             int res = logica.ActualizarMesa(id, mesa);
             if (res == 400)
             {
+                //CORRECCION: NO SE DEBEN DEVOLVER TEXTOS SIN ESTAR DENTRO DE UNA CLASE
                 return BadRequest("No se cargaron las credenciales correctamente");
             }
             if (res == 404)
             {
+                //CORRECCION: NO SE DEBEN DEVOLVER TEXTOS SIN ESTAR DENTRO DE UNA CLASE
                 return NotFound("no se encontro una mesa con esa id");
             }
             return Ok($"Se actualizo la informacion de la mesa con la id: {id}");
@@ -67,6 +73,7 @@ namespace WebController
             Mesa mesa = logica.ObtenerMesa(id);
             if (mesa == null)
             {
+                //CORRECCION: NO SE DEBEN DEVOLVER TEXTOS SIN ESTAR DENTRO DE UNA CLASE
                 return NotFound("No se encontro la mesa con esa id");
             }
             return Ok(mesa);

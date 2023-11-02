@@ -6,6 +6,7 @@ namespace Service
 {
     public class Gestion
     {
+        //CORRECCION: ESTO DEBIA DEVOLVER LAS VALIDACIONES CON ERROR, ESTA MAL EL TIPO DE DATOS DE RESPUESTA
         public bool AltaMesa(MesaDTO mesa)
         {
             resultado res = mesa.Validar();
@@ -32,6 +33,7 @@ namespace Service
             
             
         }
+        //CORRECCION: ESTO DEBIA DEVOLVER LAS VALIDACIONES CON ERROR, ESTA MAL EL TIPO DE DATOS DE RESPUESTA
         public int ActualizarMesa(int id, MesaDTO mesa)
         {
             resultado res = mesa.Validar();
@@ -75,7 +77,7 @@ namespace Service
         }
     }
         
-        
+        //CORRECCION: ESPACIOS INNECESARIOS
     
 }
 
